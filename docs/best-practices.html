@@ -18,8 +18,8 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
 		
-		<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-		<link rel="dns-prefetch" href="https://www.google-analytics.com" />
+		
+		
 
 		<!-- Default SEO meta tags (can be overridden by pages) -->
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -28,7 +28,7 @@
 		<meta name="geo.placename" content="United States" />
 
 		
-		<link href="../_app/immutable/assets/style.css" rel="stylesheet">
+		<link href=".assets/style.css" rel="stylesheet">
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">  <div class="flex flex-col min-h-screen"> <main class="flex-1 "><h1>404</h1> <p>Not Found</p></main></div> 
@@ -42,8 +42,8 @@
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../_app/immutable/entry/start.V4PXbtaR.js"),
-						import("../_app/immutable/entry/app.BfZkhct5.js")
+						import(".entry/start.V4PXbtaR.js"),
+						import(".entry/app.BfZkhct5.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 1],
