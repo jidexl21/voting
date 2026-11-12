@@ -365,8 +365,8 @@
 
 		/* ---------- how it works ---------- */
 		.how-wrap{margin-top:3.6rem;position:relative}
-		.how-line{position:absolute;top:52px;left:calc(16.666% + 26px);right:calc(16.666% + 26px);height:2px;background:linear-gradient(90deg,rgba(11,107,221,.15),rgba(11,107,221,.5),rgba(34,211,238,.15));z-index:0}
-		.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative;z-index:1}
+		.how-line{position:absolute;top:52px;left:calc(12.5% + 26px);right:calc(12.5% + 26px);height:2px;background:linear-gradient(90deg,rgba(11,107,221,.15),rgba(11,107,221,.5),rgba(34,211,238,.15));z-index:0}
+		.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative;z-index:1}
 		.step{text-align:center;padding:0 .5rem}
 		.step .num{
 			width:52px;height:52px;margin:0 auto 1.4rem;border-radius:50%;
@@ -379,6 +379,17 @@
 		.step .num::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1px dashed rgba(11,107,221,.35);animation:spin 14s linear infinite}
 		.step h3{font-size:1.15rem;margin-bottom:.55rem}
 		.step p{font-size:.92rem;color:var(--muted)}
+		.claim{margin-top:3.6rem;display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:center;background:var(--card,#fff);border:1px solid var(--line);border-radius:1.6rem;padding:2.4rem;box-shadow:var(--shadow-sm)}
+		.claim h3{font-size:1.35rem;margin-bottom:.6rem}
+		.claim-copy p{color:var(--muted);font-size:.95rem}
+		.claim-form label{display:block;font-weight:600;font-size:.88rem;margin-bottom:.5rem}
+		.claim-field{display:flex;align-items:center;border:1px solid var(--line);border-radius:.9rem;background:#f8fafc;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+		.claim-field:focus-within{border-color:#0b6bdd;box-shadow:0 0 0 4px rgba(11,107,221,.12)}
+		.claim > *{min-width:0}
+		.claim-suf{padding:.8rem .9rem .8rem .1rem;font-size:.92rem;white-space:nowrap;font-weight:600;color:#0b6bdd}
+		.claim-field input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:.95rem;font-weight:600;padding:.8rem 0 .8rem .9rem;outline:none;text-align:right}
+		.claim-hint{font-size:.8rem;color:var(--muted);margin:.5rem 0 1rem}
+		.claim-hint.err{color:#dc2626}
 
 		/* ---------- security ---------- */
 		.sec-card{background:var(--navy-900);border-radius:2rem;display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;padding:3.4rem;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
@@ -498,6 +509,9 @@
 
 		/* ---------- responsive ---------- */
 		@media (max-width:1020px){
+			.how-grid{grid-template-columns:repeat(2,1fr);gap:2.6rem 2rem}
+			.how-line{display:none}
+			.claim{grid-template-columns:minmax(0,1fr);padding:2rem}
 			.nav-links,.nav-cta .signin{display:none}
 			.burger{display:flex}
 			.nav-cta{margin-left:auto}
@@ -514,6 +528,7 @@
 			.stat:nth-child(2)::after{display:none}
 		}
 		@media (max-width:820px){
+			.claim{padding:1.5rem}
 			.price-grid{grid-template-columns:1fr;max-width:430px}
 			.nav-links,.nav-cta .signin{display:none}
 			.burger{display:flex}
@@ -732,8 +747,8 @@
 					</article>
 					<article class="feat reveal" style="--d:.16s">
 						<div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
-						<h3>Fast setup</h3>
-						<p>Launch a full election in minutes with smart defaults — no downloads, no IT department needed.</p>
+						<h3>Your own web address</h3>
+						<p>Every organisation gets its own site at <b>yourorg.elects.online</b>, set up automatically when you sign up. No downloads, no IT department needed.</p>
 					</article>
 				</div>
 			</div>
@@ -744,59 +759,48 @@
 			<div class="container">
 				<div class="center reveal">
 					<span class="eyebrow"><span class="dot"></span> How it works</span>
-					<h2 class="sec-title">Three steps to a <span class="grad-text">better vote</span></h2>
-					<p class="sec-sub">Our platform guides you through every step, from setup to verified results.</p>
+					<h2 class="sec-title">Four steps to a <span class="grad-text">better vote</span></h2>
+					<p class="sec-sub">Your organisation gets its own home on elects.online, and we guide you from setup to verified results.</p>
 				</div>
 				<div class="how-wrap">
 					<div class="how-line"></div>
 					<div class="how-grid">
 						<div class="step reveal">
 							<div class="num">1</div>
+							<h3>Claim your address</h3>
+							<p>Sign up and pick your organisation's web address, like <b>yourorg.elects.online</b>. We set it up for you automatically.</p>
+						</div>
+						<div class="step reveal" style="--d:.1s">
+							<div class="num">2</div>
 							<h3>Create your election</h3>
 							<p>Define positions, add candidates, set voting rules, and apply your branding in minutes.</p>
 						</div>
-						<div class="step reveal" style="--d:.15s">
-							<div class="num">2</div>
+						<div class="step reveal" style="--d:.2s">
+							<div class="num">3</div>
 							<h3>Share &amp; vote</h3>
-							<p>Invite voters with a link. They cast an encrypted ballot from any device, anywhere.</p>
+							<p>Send voters to your address. They cast an encrypted ballot from any device, anywhere.</p>
 						</div>
 						<div class="step reveal" style="--d:.3s">
-							<div class="num">3</div>
+							<div class="num">4</div>
 							<h3>Get live results</h3>
 							<p>Follow real-time counts and turnout, then download an official, certifiable report.</p>
 						</div>
 					</div>
 				</div>
-				<div class="center" style="margin-top:3.2rem">
-					<a class="btn btn-primary" href="https://app.elects.online/institution-signup">Start your first election</a>
-				</div>
-			</div>
-		</section>
-
-		<!-- ================= SECURITY ================= -->
-		<section class="sec-pad" id="security">
-			<div class="container">
-				<div class="sec-card reveal" data-r="zoom">
-					<div class="orb orb-2" style="width:340px;height:340px;"></div>
-					<div>
-						<span class="eyebrow" style="background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.25);color:#7dd3fc"><span class="dot"></span> Security</span>
-						<h2>Serious security behind every single ballot</h2>
-						<p style="color:rgba(255,255,255,.75)">We treat election integrity as our highest priority. Your votes are protected by the same encryption and practices demanded by national-scale institutions.</p>
-						<ul class="sec-list">
-							<li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>End-to-end encrypted ballots</li>
-							<li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Tamper-proof, immutable audit logs</li>
-							<li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Role-based admin controls &amp; approvals</li>
-							<li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Identity verification options per election</li>
-							<li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>GDPR &amp; privacy compliant by design</li>
-						</ul>
+				<div class="claim reveal" id="claim">
+					<div class="claim-copy">
+						<h3>Your organisation's own address</h3>
+						<p>Every organisation gets a dedicated site at <b>name.elects.online</b>. Your voters vote there, your committee manages elections there, and it carries your logo and colours. It stays yours for as long as your account is active.</p>
 					</div>
-					<div class="shield-zone">
-						<div class="shield">
-							<div class="core"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
-							<span class="badge sb-1">SOC-grade infrastructure</span>
-							<span class="badge sb-2">Encryption at rest &amp; transit</span>
+					<form class="claim-form" id="claimForm" action="https://app.elects.online/institution-signup" method="get">
+						<label for="claimInput">Choose your address</label>
+						<div class="claim-field">
+							<input id="claimInput" name="subdomain" type="text" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="40" placeholder="yourorg" aria-describedby="claimHint" />
+							<span class="claim-suf">.elects.online</span>
 						</div>
-					</div>
+						<p class="claim-hint" id="claimHint">Letters, numbers and hyphens. Final availability is checked when you sign up.</p>
+						<button class="btn btn-primary" type="submit">Claim this address</button>
+					</form>
 				</div>
 			</div>
 		</section>
@@ -902,6 +906,12 @@
 							<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
 						</button>
 						<div class="faq-a"><div><p>Yes. The Free plan supports up to 100 voters and 1 election per year, with real-time results and audit trails — no payment required to sign up. Paid plans are an annual subscription.</p></div></div>
+					</div>
+					<div class="faq reveal">
+						<button class="faq-q">Do we get our own web address?
+							<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+						</button>
+						<div class="faq-a"><div><p>Yes. When you sign up you choose a unique address for your organisation, such as <b>lagosalumni.elects.online</b>. We create it automatically; on the Free plan it's created once you confirm your admin email. Your voters vote there and your committee signs in there to manage elections, voters and results, under your own logo and colours.</p></div></div>
 					</div>
 					<div class="faq reveal">
 						<button class="faq-q">How are votes kept secure and private?
@@ -1208,6 +1218,32 @@
 					try { localStorage.setItem("elects.currency", currency); } catch(e){}
 					applyCurrency(currency, true);
 				});
+			});
+
+			/* ---- address claim (mirrors the app's subdomain step) ---- */
+			var claimInput = document.getElementById("claimInput");
+			var claimForm = document.getElementById("claimForm");
+			var claimHint = document.getElementById("claimHint");
+			var hintText = claimHint.textContent;
+			claimInput.addEventListener("input", function(){
+				var v = claimInput.value.toLowerCase().replace(/[^a-z0-9-]/g, "");
+				if(v !== claimInput.value) claimInput.value = v;
+				claimHint.textContent = hintText; claimHint.classList.remove("err");
+			});
+			claimForm.addEventListener("submit", function(e){
+				var v = claimInput.value.replace(/^-+|-+$/g, "");
+				claimInput.value = v;
+				if(!v){
+					e.preventDefault();
+					claimHint.textContent = "Enter the address you'd like, e.g. yourorg.";
+					claimHint.classList.add("err");
+					claimInput.focus();
+					return;
+				}
+				/* carry the visitor's currency choice through, like the plan buttons do */
+				var cur = claimForm.querySelector('input[name="currency"]');
+				if(!cur){ cur = document.createElement("input"); cur.type = "hidden"; cur.name = "currency"; claimForm.appendChild(cur); }
+				cur.value = currency;
 			});
 
 			/* ---- FAQ accordion ---- */
