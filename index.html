@@ -425,19 +425,19 @@
 		.toggle{display:inline-flex;align-items:center;justify-content:center;gap:.9rem;margin:2rem auto 3.2rem;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.4rem;box-shadow:var(--shadow-sm);position:relative}
 		.toggle button{font-weight:600;font-size:.9rem;color:var(--muted);padding:.55rem 1.3rem;border-radius:999px;transition:color .3s;position:relative;z-index:1}
 		.toggle .thumb{position:absolute;top:.4rem;bottom:.4rem;left:.4rem;width:calc(50% - .4rem);border-radius:999px;background:var(--grad);transition:transform .4s var(--ease);box-shadow:0 8px 22px rgba(11,107,221,.35)}
-		.toggle .thumb.yearly{transform:translateX(100%)}
+		.toggle .thumb.usd{transform:translateX(100%)}
 		.toggle button.on{color:#fff}
 		.toggle .save{position:absolute;top:-2.1rem;right:0;font-size:.72rem;font-weight:700;color:#16a34a;background:#dcfce7;border-radius:999px;padding:.25rem .7rem}
-		.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
-		.price-card{background:var(--card);border:1px solid var(--line);border-radius:1.6rem;padding:2.2rem 2rem;display:flex;flex-direction:column;position:relative;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
+		.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;align-items:stretch}
+		.price-card{background:var(--card);border:1px solid var(--line);border-radius:1.6rem;padding:2.2rem 1.6rem;display:flex;flex-direction:column;position:relative;transition:transform .45s var(--ease),box-shadow .45s var(--ease)}
 		.price-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
 		.price-card.featured{background:linear-gradient(170deg,#0a0f2e,#101c4e);color:#fff;border-color:transparent;box-shadow:0 30px 70px rgba(5,8,33,.4)}
 		.price-card.featured::before{content:"";position:absolute;inset:0;border-radius:1.6rem;padding:1px;background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
 		.pop-tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.38rem 1rem;border-radius:999px;box-shadow:0 8px 20px rgba(11,107,221,.4)}
 		.price-name{font-size:.95rem;font-weight:700;margin-bottom:.3rem;color:var(--muted)}
 		.featured .price-name{color:#9cc4ff}
-		.price-line{display:flex;align-items:flex-end;gap:.35rem;margin-bottom:1.3rem}
-		.price-line .p{font-family:Sora,sans-serif;font-size:2.7rem;font-weight:800;letter-spacing:-.02em;transition:opacity .25s}
+		.price-line{display:flex;flex-wrap:wrap;align-items:flex-end;gap:.35rem;margin-bottom:1.3rem}
+		.price-line .p{font-family:Sora,sans-serif;font-size:2.25rem;font-weight:800;letter-spacing:-.02em;transition:opacity .25s}
 		.price-line .per{font-size:.85rem;color:var(--muted);padding-bottom:.4rem}
 		.featured .per{color:#9cc4ff}
 		.price-feats{list-style:none;flex:1;margin-bottom:1.8rem}
@@ -498,6 +498,9 @@
 
 		/* ---------- responsive ---------- */
 		@media (max-width:1020px){
+			.nav-links,.nav-cta .signin{display:none}
+			.burger{display:flex}
+			.nav-cta{margin-left:auto}
 			.hero-inner{grid-template-columns:1fr;gap:4rem}
 			.hero{padding-top:7.5rem;text-align:center}
 			.hero p.lead{margin-inline:auto}
@@ -505,15 +508,16 @@
 			.mock-wrap{max-width:480px;margin-inline:auto}
 			.sec-card{grid-template-columns:1fr;padding:2.2rem}
 			.feat-grid{grid-template-columns:repeat(2,1fr)}
-			.price-grid{grid-template-columns:1fr;max-width:430px;margin-inline:auto}
+			.price-grid{grid-template-columns:repeat(2,1fr);max-width:760px;margin-inline:auto;row-gap:2rem}
 			.foot-grid{grid-template-columns:1fr 1fr}
 			.stats-grid{grid-template-columns:repeat(2,1fr);gap:2.4rem 1rem}
 			.stat:nth-child(2)::after{display:none}
 		}
 		@media (max-width:820px){
+			.price-grid{grid-template-columns:1fr;max-width:430px}
 			.nav-links,.nav-cta .signin{display:none}
 			.burger{display:flex}
-			.nav-cta{margin-left:0}
+			.nav-cta{margin-left:auto}
 			.feat-grid{grid-template-columns:1fr;max-width:430px;margin-inline:auto}
 			.how-grid{grid-template-columns:1fr;gap:2.6rem}
 			.how-line{display:none}
@@ -764,7 +768,7 @@
 					</div>
 				</div>
 				<div class="center" style="margin-top:3.2rem">
-					<a class="btn btn-primary" href="how-it-works.html">Explore the full process</a>
+					<a class="btn btn-primary" href="https://app.elects.online/institution-signup">Start your first election</a>
 				</div>
 			</div>
 		</section>
@@ -825,54 +829,60 @@
 			<div class="container">
 				<div class="center reveal">
 					<span class="eyebrow"><span class="dot"></span> Pricing</span>
-					<h2 class="sec-title">Start free. <span class="grad-text">Scale when you're ready.</span></h2>
-					<p class="sec-sub">Simple, transparent pricing for every organisation — no credit card required to begin.</p>
+					<h2 class="sec-title">Start free. <span class="grad-text">Pay only per election.</span></h2>
+					<p class="sec-sub">Simple, transparent pricing for every organisation — no subscription, and no payment needed to start on Free.</p>
 				</div>
 				<div class="center reveal">
-					<div class="toggle" id="priceToggle">
+					<div class="toggle" id="priceToggle" role="group" aria-label="Currency">
 						<span class="thumb"></span>
-						<button type="button" class="on" data-plan="monthly">Monthly</button>
-						<button type="button" data-plan="yearly">Yearly <span class="save">Save 20%</span></button>
+						<button type="button" data-currency="NGN">₦ NGN</button>
+						<button type="button" data-currency="USD">$ USD</button>
 					</div>
 				</div>
 				<div class="price-grid">
 					<div class="price-card reveal">
 						<div class="price-name">Free</div>
-						<div class="price-line"><span class="p" data-monthly="$0" data-yearly="$0">$0</span><span class="per">/ forever</span></div>
+						<div class="price-line"><span class="p" data-price="free"></span><span class="per">/ forever</span></div>
 						<ul class="price-feats">
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Up to 50 voters</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Unlimited elections</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Real-time results</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Standard support</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Up to 100 voters</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>1 election per year</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>ELECTS ONLINE branding shown</li>
 						</ul>
-						<a class="btn btn-outline" href="https://app.elects.online/institution-signup">Get started</a>
+						<a class="btn btn-outline" data-plan-link="free" href="https://app.elects.online/institution-signup?plan=free">Get started</a>
 					</div>
-					<div class="price-card featured reveal" style="--d:.12s">
-						<span class="pop-tag">Most popular</span>
-						<div class="price-name">Pro</div>
-						<div class="price-line"><span class="p" data-monthly="$29" data-yearly="$24">$29</span><span class="per" data-m="/ month" data-y="/ month, billed yearly">/ month</span></div>
+					<div class="price-card reveal" style="--d:.08s">
+						<div class="price-name">Starter</div>
+						<div class="price-line"><span class="p" data-price="starter"></span><span class="per">/ election</span></div>
 						<ul class="price-feats">
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Unlimited voters</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Custom branding</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Full audit &amp; export reports</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Multi-language ballots</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Priority support</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Up to 1,000 voters</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>1 concurrent election</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Pay per election via Monnify or Paystack</li>
 						</ul>
-						<a class="btn btn-primary" href="https://app.elects.online/institution-signup">Choose Pro</a>
+						<a class="btn btn-outline" data-plan-link="starter" href="https://app.elects.online/institution-signup?plan=starter">Choose Starter</a>
+					</div>
+					<div class="price-card featured reveal" style="--d:.16s">
+						<span class="pop-tag">Most popular</span>
+						<div class="price-name">Growth</div>
+						<div class="price-line"><span class="p" data-price="growth"></span><span class="per">/ election</span></div>
+						<ul class="price-feats">
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Up to 10,000 voters</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Unlimited concurrent elections</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Pay per election via Monnify or Paystack</li>
+						</ul>
+						<a class="btn btn-primary" data-plan-link="growth" href="https://app.elects.online/institution-signup?plan=growth">Choose Growth</a>
 					</div>
 					<div class="price-card reveal" style="--d:.24s">
 						<div class="price-name">Enterprise</div>
-						<div class="price-line"><span class="p" data-monthly="Custom" data-yearly="Custom">Custom</span><span class="per">/ tailored</span></div>
+						<div class="price-line"><span class="p" data-price="enterprise">Custom</span><span class="per">/ tailored</span></div>
 						<ul class="price-feats">
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>SSO &amp; SAML integration</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Dedicated infrastructure</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Custom SLAs</li>
-							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Dedicated success manager</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Unlimited voters</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Dedicated support</li>
+							<li><span class="ckk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>SSO</li>
 						</ul>
-						<a class="btn btn-outline" href="pricing.html">Contact us</a>
+						<a class="btn btn-outline" data-plan-link="enterprise" href="mailto:support@elects.online?subject=ELECTS%20ONLINE%20Enterprise">Contact us</a>
 					</div>
 				</div>
-				<p class="price-note reveal">All plans include secure encryption, real-time results and audit trails. <a href="pricing.html" style="color:var(--brand-2);font-weight:600;border-bottom:1px solid rgba(11,107,221,.3)">View full pricing →</a></p>
+				<p class="price-note reveal">All plans include secure encryption, real-time results and audit trails.</p>
 			</div>
 		</section>
 
@@ -889,7 +899,7 @@
 						<button class="faq-q">Is elects.online really free to start?
 							<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
 						</button>
-						<div class="faq-a"><div><p>Yes. The Free plan supports up to 50 voters with unlimited elections, real-time results, and standard support — no credit card required to sign up.</p></div></div>
+						<div class="faq-a"><div><p>Yes. The Free plan supports up to 100 voters and 1 election per year, with real-time results and audit trails — no payment required to sign up. Paid plans are billed per election, not as a subscription.</p></div></div>
 					</div>
 					<div class="faq reveal">
 						<button class="faq-q">How are votes kept secure and private?
@@ -901,7 +911,7 @@
 						<button class="faq-q">Can I customise the ballot with our branding?
 							<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
 						</button>
-						<div class="faq-a"><div><p>Absolutely. Add your logo, brand colours, and customise the layout so your election feels native to your organisation — available on the Pro plan and above.</p></div></div>
+						<div class="faq-a"><div><p>Absolutely. Add your logo, brand colours, and customise the layout so your election feels native to your organisation. Free plan elections show ELECTS ONLINE branding.</p></div></div>
 					</div>
 					<div class="faq reveal">
 						<button class="faq-q">Do voters need to create an account?
@@ -919,7 +929,7 @@
 						<button class="faq-q">What kind of support do you offer?
 							<span class="chev"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
 						</button>
-						<div class="faq-a"><div><p>Free plans include standard support; Pro gets priority support with faster response; Enterprise includes a dedicated success manager and custom SLAs.</p></div></div>
+						<div class="faq-a"><div><p>Every plan includes email support at support@elects.online. Enterprise adds dedicated support and SSO for larger organisations.</p></div></div>
 					</div>
 				</div>
 			</div>
@@ -953,25 +963,23 @@
 					</a>
 					<p>Secure, transparent digital elections for organisations worldwide. Free, fair, and incredibly simple.</p>
 					<div class="socials">
-						<a href="https://linkedin.com/company/elects.online" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></a>
 						<a href="https://app.elects.online" aria-label="App" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></a>
 						<a href="mailto:support@elects.online" aria-label="Email" style="font-size:1rem">✉︎</a>
 					</div>
 				</div>
 				<div class="foot-col">
 					<h4>Product</h4>
-					<a href="features.html">Features</a>
-					<a href="how-it-works.html">How it works</a>
-					<a href="pricing.html">Pricing</a>
-					<a href="security.html">Security</a>
-					<a href="docs.html">Documentation</a>
+					<a href="#features">Features</a>
+					<a href="#how">How it works</a>
+					<a href="#pricing">Pricing</a>
+					<a href="#security">Security</a>
+					<a href="#faq">FAQ</a>
 				</div>
 				<div class="foot-col">
-					<h4>Company</h4>
-					<a href="about.html">About</a>
-					<a href="support.html">Support</a>
-					<a href="contact.html">Contact</a>
-					<a href="status.html">Status</a>
+					<h4>Account</h4>
+					<a href="https://app.elects.online">Sign in</a>
+					<a href="https://app.elects.online/institution-signup">Create free account</a>
+					<a href="mailto:support@elects.online">Contact support</a>
 				</div>
 				<div class="foot-col">
 					<h4>Legal</h4>
@@ -1145,32 +1153,46 @@
 				wrap.addEventListener("mouseleave", function(){ card.style.transform = "rotateY(0deg) rotateX(0deg)"; });
 			}
 
-			/* ---- pricing toggle ---- */
+			/* ---- pricing + currency ----
+			   Keep PLANS in sync with FRONTEND/elects-vue/src/lib/pricing.js (the app's source of truth).
+			   Currency: ?currency= → saved choice → timezone (Africa/Lagos = NGN, everyone else = USD). */
+			var PLANS = { free:{NGN:0,USD:0}, starter:{NGN:75000,USD:49}, growth:{NGN:180000,USD:119}, enterprise:null };
+			var SYM = { NGN:"₦", USD:"$" };
+			function norm(c){ c = String(c || "").toUpperCase(); return (c === "NGN" || c === "USD") ? c : null; }
+			function detectCurrency(){
+				try { var q = norm(new URLSearchParams(location.search).get("currency")); if(q) return q; } catch(e){}
+				try { var sv = norm(localStorage.getItem("elects.currency")); if(sv) return sv; } catch(e){}
+				var tz = "";
+				try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch(e){}
+				return tz === "Africa/Lagos" ? "NGN" : "USD";
+			}
 			var toggle = document.getElementById("priceToggle");
 			var thumb = toggle.querySelector(".thumb");
 			var btns = toggle.querySelectorAll("button");
-			var plan = "monthly";
+			function applyCurrency(cur, animate){
+				btns.forEach(function(b){ var on = b.getAttribute("data-currency") === cur; b.classList.toggle("on", on); b.setAttribute("aria-pressed", on); });
+				thumb.classList.toggle("usd", cur === "USD");
+				document.querySelectorAll(".price-line .p[data-price]").forEach(function(p){
+					var pr = PLANS[p.getAttribute("data-price")];
+					var txt = pr ? SYM[cur] + pr[cur].toLocaleString("en-US") : "Custom";
+					if(!animate){ p.textContent = txt; return; }
+					p.style.opacity = 0;
+					setTimeout(function(){ p.textContent = txt; p.style.opacity = 1; }, 180);
+				});
+				/* carry plan + currency into the app's signup so both show the same thing */
+				document.querySelectorAll('a[href^="https://app.elects.online/institution-signup"]').forEach(function(a){
+					var u = new URL(a.href);
+					u.searchParams.set("currency", cur);
+					a.href = u.toString();
+				});
+			}
+			var currency = detectCurrency();
+			applyCurrency(currency, false);
 			btns.forEach(function(b){
 				b.addEventListener("click", function(){
-					btns.forEach(function(x){ x.classList.remove("on"); });
-					b.classList.add("on");
-					plan = b.getAttribute("data-plan");
-					thumb.classList.toggle("yearly", plan === "yearly");
-					document.querySelectorAll(".price-line .p").forEach(function(p){
-						p.style.opacity = 0;
-						setTimeout(function(){ p.textContent = p.getAttribute("data-" + plan); p.style.opacity = 1; }, 180);
-					});
-					if(plan === "yearly"){
-						document.querySelectorAll('.price-line .per[data-y]').forEach(function(p){
-							p.style.opacity = 0;
-							setTimeout(function(){ p.textContent = p.getAttribute("data-y"); p.style.opacity = 1; }, 180);
-						});
-					} else {
-						document.querySelectorAll('.price-line .per[data-y]').forEach(function(p){
-							p.style.opacity = 0;
-							setTimeout(function(){ p.textContent = p.getAttribute("data-m"); p.style.opacity = 1; }, 180);
-						});
-					}
+					currency = b.getAttribute("data-currency");
+					try { localStorage.setItem("elects.currency", currency); } catch(e){}
+					applyCurrency(currency, true);
 				});
 			});
 
